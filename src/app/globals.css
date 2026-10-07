@@ -1,26 +1,388 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens pulled from Figma:
+ * "Redesign - Inframobile (Copy) (Copy)" → Landing page (14701:16359)
+ * Values come from the file's variable definitions, so names mirror Figma.
+ */
+@theme {
+  /* Colour — Figma `color/*` */
+  --color-grey-6: #0f0f0f;
+  --color-grey-10: #1a1a1a;
+  --color-grey-14: #242424;
+  --color-grey-96: #f5f5f5;
+  --color-grey-99: #fcfcfc;
+  --color-grey-10-a10: #1a1a1a1a;
+  --color-white-a10: #ffffff1a;
+  --color-black-a10: #0000001a;
+  --color-gray-50: #fafafa;
+
+  /* Colour — literal fills used on this screen */
+  --color-canvas-ecosystem: #fbfdff;
+  --color-card-logo: #f8fbff;
+  --color-card-logo-border: #c5daf5;
+  --color-accent: #91beeb;
+  /* The About slider's numeral and its progress control sit outside the file's
+     azure ramp — Figma carries them as raw hex, so they're named by role. */
+  --color-blue-600: #0051ec;
+  --color-blue-800: #003bab;
+
+  /* Cofrastructure Labs (14680:1275) — its own palette, not the Miller Larkin one. */
+  --color-lab-orange: #ff6200;
+  --color-lab-sand: #e9e5d4;
+
+  /* Type families — Figma `font family/*` */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-ui: var(--font-inter), Arial, Helvetica, sans-serif;
+  --font-tight: var(--font-inter-tight), var(--font-inter), Arial, sans-serif;
+  /* Figma `font family/Font 2` is Bureauserif — a licensed face that is not
+     bundled here. Drop the webfont in and it takes over automatically. */
+  --font-display: "Bureauserif", ui-serif, Georgia, "Times New Roman", serif;
+  /* Cofrastructure Labs pairs Andale Mono with Space Grotesk. Andale Mono is a
+     licensed system face (bundled with macOS, not on Google Fonts), so it is
+     referenced by name and falls back to the platform monospace elsewhere. */
+  --font-lab-mono: "Andale Mono", AndaleMono, ui-monospace, Menlo, Consolas, monospace;
+  --font-grotesk: var(--font-space-grotesk), Arial, Helvetica, sans-serif;
+
+  /* Type scale — Figma text styles */
+  --text-h1: 64px;
+  --text-h1--line-height: 64px;
+  --text-h1--font-weight: 400;
+
+  --text-h3: 48px;
+  --text-h3--line-height: 52.8px;
+  --text-h3--font-weight: 400;
+  --text-h3--letter-spacing: -1.2px;
+
+  --text-lead: 15.6px;
+  --text-lead--line-height: 22px;
+  --text-lead--font-weight: 400;
+
+  --text-link: 14px;
+  --text-link--line-height: 18px;
+  --text-link--font-weight: 400;
+
+  --text-meta: 11.3px;
+  --text-meta--line-height: 18px;
+  --text-meta--font-weight: 500;
+  --text-meta--letter-spacing: 0.12px;
+
+  --text-cta: 15.6px;
+  --text-cta--line-height: 15px;
+  --text-cta--font-weight: 500;
+
+  /* Figma `Semantic/Heading 6` — the dotted section eyebrow. */
+  --text-eyebrow: 15.5px;
+  --text-eyebrow--line-height: 24px;
+  --text-eyebrow--font-weight: 500;
+
+  /* Figma `Semantic/Heading 2` (plasma.org) — the pull quote. Distinct from
+     --text-h3, which is the same 48px at a tighter 52.8/-1.2. */
+  --text-quote: 48px;
+  --text-quote--line-height: 56px;
+  --text-quote--font-weight: 400;
+  --text-quote--letter-spacing: -0.48px;
+
+  /* Figma `Semantic/Heading 3` (paraform) — card and slide panel titles. */
+  --text-h4: 21px;
+  --text-h4--line-height: 26.4px;
+  --text-h4--font-weight: 500;
+  --text-h4--letter-spacing: -0.33px;
+
+  --text-card: 14.8px;
+  --text-card--line-height: 24px;
+  --text-card--font-weight: 500;
+  --text-card--letter-spacing: 0.16px;
+
+  --text-body-md: 16.7px;
+  --text-body-md--line-height: 27px;
+  --text-body-md--font-weight: 500;
+
+  /* The slider's oversized step numeral. */
+  --text-numeral: 72px;
+  --text-numeral--line-height: 79.2px;
+  --text-numeral--font-weight: 400;
+  --text-numeral--letter-spacing: -1.8px;
+
+  --text-numeral-label: 20px;
+  --text-numeral-label--line-height: 24px;
+  --text-numeral-label--font-weight: 500;
+  --text-numeral-label--letter-spacing: 0.16px;
+
+  /* Cofrastructure Labs type scale. */
+  --text-lab-h1: 60px;
+  --text-lab-h1--line-height: 60px;
+  --text-lab-h1--font-weight: 400;
+  --text-lab-h1--letter-spacing: -1.5px;
+
+  --text-lab-h2: 36px;
+  --text-lab-h2--line-height: 40px;
+  --text-lab-h2--font-weight: 400;
+  --text-lab-h2--letter-spacing: -0.9px;
+
+  --text-lab-h4: 20px;
+  --text-lab-h4--line-height: 28px;
+  --text-lab-h4--font-weight: 400;
+
+  --text-lab-lead: 20px;
+  --text-lab-lead--line-height: 24px;
+  --text-lab-lead--font-weight: 500;
+
+  --text-lab-body-lg: 20px;
+  --text-lab-body-lg--line-height: 29.25px;
+  --text-lab-body-lg--font-weight: 400;
+
+  --text-lab-body: 18px;
+  --text-lab-body--line-height: 29.25px;
+  --text-lab-body--font-weight: 400;
+
+  --text-lab-card: 14px;
+  --text-lab-card--line-height: 22.75px;
+  --text-lab-card--font-weight: 400;
+
+  --text-lab-tag: 14px;
+  --text-lab-tag--line-height: 28px;
+  --text-lab-tag--font-weight: 400;
+
+  --text-lab-button: 16px;
+  --text-lab-button--line-height: 24px;
+  --text-lab-button--font-weight: 500;
+  --text-lab-button--letter-spacing: 1.6px;
+
+  --text-lab-nav: 14px;
+  --text-lab-nav--line-height: 20px;
+  --text-lab-nav--font-weight: 500;
+  --text-lab-nav--letter-spacing: 0.7px;
+
+  --text-lab-footer: 16px;
+  --text-lab-footer--line-height: 26px;
+  --text-lab-footer--font-weight: 400;
+
+  /* Small-screen steps for the Labs scale. These are tokens rather than
+     `leading-[…]`/`tracking-[…]` utilities on purpose: in Tailwind v4 those set
+     --tw-leading/--tw-tracking, which then beat a larger breakpoint's text
+     token and leave its line height and tracking stuck at the mobile value. */
+  --text-lab-display-sm: 34px;
+  --text-lab-display-sm--line-height: 38px;
+  --text-lab-display-sm--font-weight: 400;
+  --text-lab-display-sm--letter-spacing: -0.85px;
+
+  --text-lab-display-md: 48px;
+  --text-lab-display-md--line-height: 50px;
+  --text-lab-display-md--font-weight: 400;
+  --text-lab-display-md--letter-spacing: -1.2px;
+
+  --text-lab-h2-sm: 28px;
+  --text-lab-h2-sm--line-height: 32px;
+  --text-lab-h2-sm--font-weight: 400;
+  --text-lab-h2-sm--letter-spacing: -0.7px;
+
+  --text-lab-lead-sm: 18px;
+  --text-lab-lead-sm--line-height: 24px;
+  --text-lab-lead-sm--font-weight: 500;
+
+  --text-lab-body-sm: 16px;
+  --text-lab-body-sm--line-height: 26px;
+  --text-lab-body-sm--font-weight: 400;
+
+  --text-lab-body-lg-sm: 17px;
+  --text-lab-body-lg-sm--line-height: 26px;
+  --text-lab-body-lg-sm--font-weight: 400;
+
+  /* Radius — Figma `corner radius/*` */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-30: 30px;
+  --radius-32: 32px;
+
+  /* The conference band scrolls continuously; a Figma frame can't express that,
+     so the duration is a judgement call (~42px/s at the design width). */
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* The About slider's active pill is a progress bar — Figma freezes it at 88.04%
+   fill, which only reads as a frame of an animation. It runs for one slide
+   interval, so the fill and the auto-advance stay in step.
+ *
+ * This is a hand-written rule rather than an `--animate-*` theme token because
+ * the duration comes from the slider. A theme token's value is substituted at
+ * `:root`, where `--slide-duration` does not exist, which would leave the whole
+ * declaration invalid. Here `var()` resolves on the bar, which inherits it. */
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.animate-slide-progress {
+  animation: slide-progress var(--slide-duration, 6000ms) linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+
+  /* Show the bar filled rather than creeping; auto-advance is disabled in the
+     component under the same query, so a static full bar is the honest state. */
+  .animate-slide-progress {
+    animation: none;
+    transform: scaleX(1);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-grey-10);
+  font-family: var(--font-body);
+}
+
+/* ── Motion ────────────────────────────────────────────────────────────────
+ *
+ * Everything below animates `transform`, never `translate`/`scale`/`rotate`.
+ * Tailwind v4's transform utilities are those individual properties, so the
+ * two compose instead of fighting — a `-translate-x-1/2` or a hover lift keeps
+ * working while an entrance plays on the same element.
+ */
+
+/* Scroll reveals (src/lib/motion.ts). Content is only held back while script
+   is running — the observer is what reveals it — and motion is allowed. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition:
+      opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal]:not([data-revealed]) { opacity: 0; filter: blur(6px); }
+  [data-reveal="up"]:not([data-revealed]) { transform: translateY(36px); }
+  [data-reveal="left"]:not([data-revealed]) { transform: translateX(-48px); }
+  [data-reveal="right"]:not([data-revealed]) { transform: translateX(48px); }
+  [data-reveal="scale"]:not([data-revealed]) { transform: scale(0.94); }
+}
+
+/* One-shot entrances; stagger with `delay()` from src/lib/motion.ts. */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+@keyframes header-in {
+  from { opacity: 0; transform: translateY(-100%); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(14px); filter: blur(6px); }
+}
+@keyframes art-in {
+  from { opacity: 0; transform: scale(0.96); filter: blur(8px); }
+}
+
+.animate-rise {
+  animation: rise-in 1100ms cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay, 0ms) both;
+}
+.animate-fade-in {
+  animation: fade-in 600ms ease-out var(--motion-delay, 0ms) both;
+}
+.animate-header-in {
+  animation: header-in 900ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+.animate-slide-in {
+  animation: slide-in 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--motion-delay, 0ms) both;
+}
+.animate-art-in {
+  animation: art-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hero backdrops breathe very slowly, so a still never reads as a frozen
+   frame. There is deliberately no load-in: fading the backdrop up from 0
+   exposed the section colour beneath it (white on About) as a flash. This is
+   the only rule that touches `scale`, and it only sits on a backdrop wrapper
+   with no scale utility of its own. */
+@keyframes hero-breathe {
+  to { scale: 1.07; }
+}
+.animate-hero-bg {
+  animation: hero-breathe 24s ease-in-out infinite alternate;
+}
+
+/* Ambient loops. */
+@keyframes drift {
+  50% {
+    transform: translate(var(--drift-x, 0px), var(--drift-y, -6px))
+      rotate(var(--drift-r, 4deg));
+  }
+}
+.animate-drift {
+  animation: drift 7s ease-in-out var(--motion-delay, 0ms) infinite;
+}
+
+/* Slide 01's output cards light up in turn — a wave down the column. */
+@keyframes tile-pulse {
+  0%, 60%, 100% {
+    border-color: rgb(0 81 236 / 0.5);
+    box-shadow: 0 0.891px 2.673px rgb(10 13 18 / 0.1), 0 0.891px 1.782px rgb(10 13 18 / 0.06);
+  }
+  30% {
+    border-color: rgb(0 81 236 / 0.9);
+    box-shadow: 0 0 0 4px rgb(0 81 236 / 0.1), 0 8px 18px rgb(0 81 236 / 0.18);
+  }
+}
+.animate-tile-pulse {
+  animation: tile-pulse 2.4s ease-in-out var(--motion-delay, 0ms) infinite;
+}
+
+/* Route changes (src/components/page-transition.tsx). */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-group(.page) {
+  animation-duration: 0s;
+}
+::view-transition-old(.page) {
+  animation: page-out 260ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(.page) {
+  animation: page-in 640ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+}
+@keyframes page-out {
+  to { opacity: 0; transform: translateY(-16px); filter: blur(6px); }
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-fade-in,
+  .animate-header-in,
+  .animate-slide-in,
+  .animate-art-in,
+  .animate-hero-bg,
+  .animate-drift,
+  .animate-tile-pulse {
+    animation: none;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }
