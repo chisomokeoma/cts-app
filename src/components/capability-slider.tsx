@@ -190,7 +190,7 @@ const SLIDES: {
     n: "01",
     division: "Cofrastructure Labs",
     heading: "Research",
-    body: "We apply AI to find technology solutions to infrastructure problems, using our own engineering framework.",
+    body: "We study how real systems run and find where they break down, using our own systems framework.",
     Art: ResearchArt,
     // Art: DesignArt,
   },
@@ -198,15 +198,15 @@ const SLIDES: {
     n: "02",
     division: "InfraMobile",
     heading: "Design",
-    body: "We design and develop the hardware.",
+    body: "We design better systems, and the rules that keep them working.",
     Art: DesignArt,
   },
   {
     // Variant3 carries a "Cofrastructure Labs" label, but the layer is hidden.
     n: "03",
     division: null,
-    heading: "Consultation",
-    body: "We advise on automated micro infrastructure solutions.",
+    heading: "Advisory",
+    body: "We help organisations improve the systems they already have.",
     Art: ConsultationArt,
   },
   {
@@ -214,8 +214,8 @@ const SLIDES: {
     // one step that isn't owned by a single division.
     n: "04",
     division: null,
-    heading: "Product Commercialization",
-    body: "We bring the technology to market, including partnering to do so.",
+    heading: "Partnership",
+    body: "We work with partners who build and run what we design.",
     Art: CommercializationArt,
   },
 ];

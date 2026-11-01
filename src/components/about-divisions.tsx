@@ -6,11 +6,11 @@ import { reveal } from "@/lib/motion";
 const DIVISIONS = [
   {
     title: "Cofrastructure Labs",
-    body: "Our research division. We apply AI and our own engineering framework to find solutions to infrastructure problems.",
+    body: "Our research division. Cofrastructure Labs develops and tests the Miller Larkin systems framework on real-world problems.",
   },
   {
     title: "InfraMobile",
-    body: "Our hardware design and product line. Modular, mobile infrastructure that deploys where the need is.",
+    body: "Our infrastructure division. InfraMobile designs modular, mobile infrastructure that brings essential services, such as clean water and healthcare, to where they are needed.",
   },
 ];
 
@@ -75,11 +75,11 @@ export function AboutDivisions() {
         <SectionEyebrow className="text-white">Divisions</SectionEyebrow>
 
         <h2 className="w-full max-w-[800px] font-display text-[32px] leading-[38px] tracking-[-1.2px] text-white sm:text-[40px] sm:leading-[46px] lg:text-h3 lg:leading-[52.8px]">
-          Built out, division by division.
+          One company. Two divisions.
         </h2>
 
         <p className="w-full font-ui text-body-md text-white">
-          One parent company. Real divisions beneath it, each doing one part of
+          Miller Larkin is the parent company. Each division does one part of
           the work.
         </p>
       </div>

@@ -1,10 +1,5 @@
 import { reveal } from "@/lib/motion";
 
-const SOCIALS = [
-  { label: "LinkedIn", src: "/figma/social-linkedin.svg", href: "#" },
-  { label: "X", src: "/figma/social-x.svg", href: "#" },
-];
-
 /** Figma: FOOTER 14736:806 — fill Gray/50, px 96, pt 80, pb 32. */
 export function SiteFooter() {
   return (
@@ -43,7 +38,7 @@ export function SiteFooter() {
               className="flex w-full max-w-[836px] flex-col items-center"
             >
               <h2 className="text-center font-display text-[32px] leading-[36px] text-white sm:text-[40px] sm:leading-[44px] lg:text-h3 lg:leading-(--text-h3--line-height) lg:whitespace-nowrap">
-                Want to build with Miller Larkin?
+                Want to work with Miller Larkin?
                 <br />
                 Let&rsquo;s talk.
               </h2>
@@ -54,7 +49,8 @@ export function SiteFooter() {
               className="flex w-full max-w-[575px] flex-col items-center opacity-80"
             >
               <p className="text-center font-ui text-[16.9px] leading-[27px] font-medium text-white lg:whitespace-nowrap">
-                Join world-class companies that build their teams with Paraform.
+                Have a problem worth solving or a partnership in mind? Tell us
+                about it.
               </p>
             </div>
 
@@ -63,7 +59,7 @@ export function SiteFooter() {
               className="flex w-full items-start justify-center px-[24px] pt-[12px]"
             >
               <a
-                href="#partner"
+                href="/contact"
                 className="flex h-[48px] w-full max-w-[279px] items-center justify-center rounded-32 bg-white font-ui text-cta whitespace-nowrap text-black transition-[translate,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-12px_rgba(0,0,0,0.45)]"
               >
                 Partner With Us
@@ -75,44 +71,13 @@ export function SiteFooter() {
         {/* Legal row — Figma Container 14701:16492 */}
         <div
           {...reveal("fade", 150)}
-          className="flex w-full flex-col items-center gap-[20px] sm:flex-row sm:justify-between sm:gap-0"
+          className="flex w-full flex-col items-center gap-[20px] sm:flex-row sm:justify-center sm:gap-0"
         >
           <div className="flex flex-col items-start opacity-65">
             <span className="font-ui text-meta whitespace-nowrap text-grey-10">
-              ©Miller Larkin Inc. 2026
+              © 2026 Miller Larkin. Miller Larkin is a brand of CTS Ltd (RC
+              1831271).
             </span>
-          </div>
-
-          <div className="flex items-center gap-[24px]">
-            {["Terms of use", "Privacy policy"].map((label) => (
-              <a
-                key={label}
-                href="#"
-                className="flex flex-col items-start font-ui text-meta whitespace-nowrap text-grey-10 opacity-80 transition-opacity duration-300 hover:opacity-100"
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-[16px]">
-            {SOCIALS.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="relative flex flex-col items-start transition-[translate,opacity] duration-300 ease-out hover:-translate-y-0.5 hover:opacity-70"
-              >
-                <span className="relative block h-[18px] w-[17px] shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    alt=""
-                    src={social.src}
-                    className="absolute inset-0 block size-full max-w-none"
-                  />
-                </span>
-              </a>
-            ))}
           </div>
         </div>
       </div>

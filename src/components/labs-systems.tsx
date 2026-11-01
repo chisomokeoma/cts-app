@@ -2,16 +2,16 @@ import { reveal } from "@/lib/motion";
 
 const SYSTEMS = [
   {
-    title: "Engineers of coordination",
-    body: "Building systems that orchestrate complex infrastructure networks and enable seamless coordination between multiple stakeholders.",
+    title: "Systems diagnosis",
+    body: "Finding exactly where and why a system breaks down.",
   },
   {
-    title: "Coders of system logic",
-    body: "Developing intelligent protocols and algorithms that power the decision-making processes within infrastructure systems.",
+    title: "Systems design",
+    body: "Designing systems, and the rules that keep them working.",
   },
   {
-    title: "Architects of post-crisis resilience",
-    body: "Designing infrastructure that can adapt, recover, and thrive in the face of disruption and changing environmental conditions.",
+    title: "Applied research",
+    body: "Testing our framework on real problems, starting with healthcare.",
   },
 ];
 
@@ -43,9 +43,9 @@ export function LabsSystems() {
           {...reveal("up", 100)}
           className="max-w-[688px] font-grotesk text-lab-body-sm text-black opacity-90 sm:text-lab-body"
         >
-          Cofrastructure Labs reimagines cities as living systems, redesigning
-          <br className="hidden lg:block" /> infrastructure through Matter,
-          Energy, and Information.
+          We study hospitals, cities and other essential services as living
+          systems, through
+          <br className="hidden lg:block" /> Matter, Energy and Information.
         </p>
 
         <ul className="grid gap-[12px] sm:grid-cols-2 lg:grid-cols-3">

@@ -66,17 +66,15 @@ export default function ContactPage() {
 
               <div className="flex max-w-[390px] flex-col items-center text-center">
                 <h1 className="font-body text-[30px] leading-none font-normal sm:text-[32px]">
-                  BUILD WITH MILLER LARKIN
+                  WORK WITH MILLER LARKIN
                 </h1>
                 <p className="mt-[20px] text-[13px] leading-[15px] sm:text-[14px] sm:leading-[16px] ">
-                  Have a problem worth solving, a technology to develop, or
-                  infrastructure to tackle? Connect with our team and explore
-                  how we can work together.
+                  Have a system you want to work better, a problem worth
+                  solving, or a partnership in mind? Tell us about it.
                 </p>
                 <p className="mt-[18px] text-[9px] leading-none text-[#4e4e4e]">
-                  RESEARCH <span className="mx-1">·</span> TECHNOLOGY{" "}
-                  <span className="mx-1">·</span> ENGINEERING{" "}
-                  <span className="mx-1">·</span> INFRASTRUCTURE
+                  RESEARCH <span className="mx-1">·</span> DESIGN{" "}
+                  <span className="mx-1">·</span> PARTNERSHIP
                 </p>
               </div>
             </div>

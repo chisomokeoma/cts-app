@@ -12,7 +12,7 @@ import { PageTransition } from "@/components/page-transition";
 export const metadata: Metadata = {
   title: "Cofrastructure Labs | Building the future of infrastructure",
   description:
-    "Cofrastructure Labs is a vision lab building systems, protocols, and tools to reshape how infrastructure is designed, diagnosed, and financed.",
+    "Cofrastructure Labs is the research division of Miller Larkin, developing the framework used to diagnose and design the systems people depend on.",
 };
 
 /**

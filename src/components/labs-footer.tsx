@@ -12,7 +12,8 @@ export function LabsFooter() {
         className="flex min-h-[91px] items-center justify-center px-6 py-[32px] opacity-60"
       >
         <p className="text-center font-grotesk text-lab-footer text-white">
-          &copy; 2026 COFRASTRUCTURE LABS. ENGINEERING THE FUTURE.
+          &copy; 2026 Cofrastructure Labs, a division of Miller Larkin. Miller
+          Larkin is a brand of CTS Ltd (RC 1831271).
         </p>
       </div>
     </footer>

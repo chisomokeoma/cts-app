@@ -24,7 +24,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Miller Larkin",
   description:
-    "We apply AI and engineering to build automated micro infrastructure solutions — the systems people depend on, working the way they should.",
+    "Miller Larkin designs the systems people depend on, so they work the way they should.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

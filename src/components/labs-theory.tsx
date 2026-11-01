@@ -21,9 +21,7 @@ export function LabsTheory() {
             {...reveal("left")}
             className="font-lab-mono text-lab-h2-sm uppercase sm:text-lab-h2"
           >
-            Theory is
-            <br />
-            our weapon.
+            Theory first.
           </h2>
 
           <p
@@ -38,6 +36,7 @@ export function LabsTheory() {
             {...reveal("left", 200)}
             className="flex flex-wrap gap-x-[32px] gap-y-[12px]"
           >
+            {/* TODO: point to the concept paper PDF once that file is supplied. */}
             <LabButton
               tone="glass"
               href="#systems"
@@ -45,14 +44,6 @@ export function LabsTheory() {
               className="h-[57px] gap-[12px] px-[24px] hover:border-white/25 hover:bg-white/10"
             >
               READ THE CONCEPT PAPER
-            </LabButton>
-            <LabButton
-              tone="glass"
-              href="#systems"
-              icon="/figma/labs-icon-download.svg"
-              className="h-[57px] gap-[12px] px-[24px] hover:border-white/25 hover:bg-white/10"
-            >
-              DOWNLOAD WHITEPAPER
             </LabButton>
           </div>
         </div>

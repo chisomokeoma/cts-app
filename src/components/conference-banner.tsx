@@ -12,10 +12,10 @@ const LogoMark = () => (
 );
 
 const ITEMS = [
-  { text: "MILLER LARKIN GLOBAL CONFERENCE 2026", mark: true },
-  { text: "\u201CTech for all\u201D", mark: false },
-  { text: "MILLER LARKIN GLOBAL CONFERENCE 2026", mark: true },
-  { text: "\u201CTech for all\u201D", mark: true },
+  { text: "NEW PARTNERSHIP \u00B7 MILLER LARKIN \u00D7 G-WATER SHENZHEN", mark: true },
+  { text: "\u201CBringing water vending machines to more communities\u201D", mark: false },
+  { text: "JOIN THE MILLER LARKIN TEAM", mark: true },
+  { text: "\u201CStudents and researchers: help us build our software\u201D", mark: true },
 ];
 
 /**

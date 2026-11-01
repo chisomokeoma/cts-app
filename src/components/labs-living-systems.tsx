@@ -29,9 +29,9 @@ export function LabsLivingSystems() {
             coordination points.
           </p>
           <p>
-            At Cofrastructure Labs, we apply{" "}
-            <strong className="font-bold">Living Systems Theory</strong> to
-            infrastructure. We break it down like a body:
+            At Cofrastructure Labs, we build on James Grier Miller&rsquo;s{" "}
+            <strong className="font-bold">Living Systems Theory</strong>. We
+            break every system down like a body:
           </p>
         </div>
 

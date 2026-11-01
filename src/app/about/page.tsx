@@ -11,7 +11,7 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "About | Miller Larkin",
   description:
-    "Miller Larkin is a technology company applying AI and engineering to build automated micro-infrastructure solutions that improve how people live.",
+    "Miller Larkin is a systems design company. We find where the systems people depend on break down, and design them to work.",
 };
 
 /**

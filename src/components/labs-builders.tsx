@@ -37,19 +37,20 @@ export function LabsBuilders() {
             {...reveal("up", 100)}
             className="font-grotesk text-lab-body-sm opacity-90 sm:text-lab-body"
           >
-            We&rsquo;re recruiting engineers, theorists, developers, and
-            partners who think in
-            <br className="hidden lg:block" /> systems and move with courage.
+            Join our growing team of students, researchers, engineers and
+            developers who think in
+            <br className="hidden lg:block" /> systems and want to solve real
+            problems.
           </p>
 
           <div {...reveal("up", 200)} className="flex pt-[16px]">
             <LabButton
               tone="glass-faint"
-              href="/contact"
+              href="/careers"
               icon="/figma/labs-icon-workflow.svg"
               className="h-[57px] gap-[8px] px-[24px] hover:border-white/20 hover:bg-white/10"
             >
-              COLLABORATE WITH US
+              JOIN THE TEAM
             </LabButton>
           </div>
         </div>

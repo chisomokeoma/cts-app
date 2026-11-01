@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: "Cofrastructure Labs", href: "/cofrastructure-labs" },
   { label: "InfraMobile", href: "/#inframobile" },
   { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -59,7 +60,7 @@ export function SiteHeader({
 
         <div className="ml-auto flex items-center gap-[12px]">
           <a
-            href="#partner"
+            href="/contact"
             className={`hidden h-[42px] items-center justify-center rounded-30 px-[16px] py-[12px] font-body text-link whitespace-nowrap transition-[background-color,translate] duration-300 ease-out hover:-translate-y-0.5 sm:flex ${
               isLight
                 ? "bg-black text-white hover:bg-grey-14"
@@ -115,7 +116,7 @@ export function SiteHeader({
             ))}
           </ul>
           <a
-            href="#partner"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="mt-[8px] flex h-[42px] items-center justify-center rounded-30 bg-grey-99 font-body text-link text-grey-6 sm:hidden"
           >

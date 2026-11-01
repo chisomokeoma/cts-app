@@ -27,10 +27,10 @@ export function ContactForm() {
 
   return (
     <form className="mx-auto flex w-full max-w-[474px] flex-col" onSubmit={submit}>
-      <label className="mb-[7px] text-[14px] leading-[18px]" htmlFor="email">Company Email Address</label>
-      <input className="h-[48px] border border-black/5 bg-[#f5f5f5] px-[15px] text-[13px] outline-none placeholder:text-[#737373] focus:border-black/40" id="email" name="email" type="email" placeholder="Enter your company’s email address" required />
-      <label className="mt-[23px] mb-[7px] text-[14px] leading-[18px]" htmlFor="company">Company&apos;s Name</label>
-      <input className="h-[48px] border border-black/5 bg-[#f5f5f5] px-[15px] text-[13px] outline-none placeholder:text-[#737373] focus:border-black/40" id="company" name="company" type="text" placeholder="Enter your company’s name" required />
+      <label className="mb-[7px] text-[14px] leading-[18px]" htmlFor="email">Email address</label>
+      <input className="h-[48px] border border-black/5 bg-[#f5f5f5] px-[15px] text-[13px] outline-none placeholder:text-[#737373] focus:border-black/40" id="email" name="email" type="email" placeholder="Enter your email address" required />
+      <label className="mt-[23px] mb-[7px] text-[14px] leading-[18px]" htmlFor="company">Name or organisation</label>
+      <input className="h-[48px] border border-black/5 bg-[#f5f5f5] px-[15px] text-[13px] outline-none placeholder:text-[#737373] focus:border-black/40" id="company" name="company" type="text" placeholder="Enter your name or organisation" required />
       <label className="mt-[23px] mb-[7px] text-[14px] leading-[18px]" htmlFor="sector">Sector</label>
       <select className="h-[48px] appearance-none border border-black/5 bg-[#f5f5f5] bg-[linear-gradient(45deg,transparent_50%,#363636_50%),linear-gradient(135deg,#363636_50%,transparent_50%)] bg-[position:calc(100%-20px)_20px,calc(100%-15px)_20px] bg-[size:5px_5px,5px_5px] bg-no-repeat px-[15px] text-[13px] text-[#737373] outline-none focus:border-black/40" defaultValue="" id="sector" name="sector" required>
         <option value="" disabled>Select sector of specialization</option>

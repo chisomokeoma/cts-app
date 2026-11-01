@@ -37,10 +37,9 @@ export function LabsHero() {
           className="flex w-full max-w-[857px] animate-rise flex-col items-center pb-[32px]"
         >
           <p className="text-center font-grotesk text-lab-lead-sm text-white/80 sm:text-lab-lead">
-            Cofrastructure Labs is a vision lab building systems, protocols, and
-            tools to reshape how
-            <br className="hidden lg:block" /> infrastructure is designed,
-            diagnosed, and financed.
+            Cofrastructure Labs is the research division of Miller Larkin. We
+            develop the framework, tools and methods used to diagnose and
+            <br className="hidden lg:block" /> design essential systems.
           </p>
         </div>
 

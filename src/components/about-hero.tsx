@@ -39,9 +39,8 @@ export function AboutHero() {
             style={delay(410)}
             className="w-full max-w-[712px] animate-rise text-center font-body text-[18px] leading-[22px] text-white"
           >
-            Miller Larkin is a technology company applying AI
-            and engineering to build automated micro-infrastructure solutions
-            that improve how people live.
+            Miller Larkin is a systems design company. We find where
+            the systems people depend on break down, and design them to work.
           </p>
         </div>
       </div>

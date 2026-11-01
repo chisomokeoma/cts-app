@@ -14,13 +14,13 @@ const CAPABILITIES = [
     leaf: "absolute inset-0",
   },
   {
-    label: "Consultation",
+    label: "Advisory",
     src: "/figma/icon-consultation.svg",
     // Figma: codicon:ask-compact 14706:17722
     leaf: "absolute inset-0",
   },
   {
-    label: "Commercialisation",
+    label: "Partnership",
     src: "/figma/icon-commercialisation.svg",
     // Figma: hugeicons:exchange-03 14706:17726 — group inset, then a stroke bleed
     leaf: "absolute inset-[8.33%_12.5%]",
@@ -81,19 +81,20 @@ export function Hero() {
           style={delay(280)}
           className="mt-[14px] w-full max-w-[772px] animate-rise font-body text-[36px] leading-[38px] text-grey-99 sm:text-[48px] sm:leading-[50px] lg:mt-[11px] lg:text-h1 lg:leading-[64px]"
         >
-          Technology that improves how people live.
+          Designing the systems people depend on.
         </h1>
 
         <p
           style={delay(410)}
           className="mt-[24px] w-full max-w-[712px] animate-rise font-body text-lead text-grey-96 lg:mt-[32px]"
         >
-          We apply AI and engineering to build automated micro infrastructure
-          solutions — the systems people depend on, working the way they should.
+          Miller Larkin studies how essential services really run, finds where
+          they break down, and designs them to work the way they should,
+          starting with healthcare and clean water.
         </p>
 
         <a
-          href="#partner"
+          href="/contact"
           style={delay(540)}
           className="mt-[28px] flex min-h-[50px] animate-rise items-center justify-center rounded-30 bg-grey-99 px-[24px] py-[19px] font-body text-link whitespace-nowrap text-grey-6 transition-[background-color,box-shadow,translate] duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_12px_32px_-12px_rgba(255,255,255,0.55)] lg:mt-[32px]"
         >
